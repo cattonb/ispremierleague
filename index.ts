@@ -24,7 +24,7 @@ const CHUNK_THRESHOLD = 0.86;
 
 app.post("/", async (c) => {
   if (c.req.header("Content-Type") !== "application/json") {
-    return c.json({ error: "JSON body expected" }, { status: 406 });
+    return c.json({ error: "JSON body expected!" }, { status: 406 });
   }
 
   try {
@@ -41,11 +41,11 @@ app.post("/", async (c) => {
     let { message } = body as { message: string };
 
     if (!message) {
-      return c.json({ error: "Message argument is required" }, { status: 400 });
+      return c.json({ error: "Message argument is required!" }, { status: 400 });
     }
 
     if (message.length > 100) {
-      return c.json({ error: "Message can only be at most 100 characters" }, { status: 413 });
+      return c.json({ error: "Message can only be at most 100 characters!" }, { status: 413 });
     }
 
     message = message
@@ -116,7 +116,7 @@ app.post("/", async (c) => {
 
     return c.json(
       {
-        error: "Something went wrong.",
+        error: "Something went wrong!",
       },
       {
         status: 500,
