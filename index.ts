@@ -7,7 +7,7 @@ import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 const app = new Hono();
 
 const semanticSplitter = new RecursiveCharacterTextSplitter({
-  chunkSize: 10,
+  chunkSize: 12,
   separators: [" "],
   chunkOverlap: 6,
 });
