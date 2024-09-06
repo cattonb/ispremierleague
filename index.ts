@@ -53,15 +53,10 @@ app.post("/", async (c) => {
       .filter((word) => !WHITELIST.includes(word.toLowerCase()))
       .join(" ");
 
-    console.log(message);
-
     const [wordChunks, semanticChunks] = await Promise.all([
       splitTextIntoWords(message),
       splitTextIntoSemantics(message),
     ]);
-
-    console.log(wordChunks);
-    console.log(semanticChunks);
 
     const flaggedFor = new Set<{ score: number; team: string }>();
 
@@ -73,8 +68,6 @@ app.post("/", async (c) => {
           data: wordChunk,
           includeMetadata: true,
         });
-
-        console.log(vector);
 
         if (vector && vector.score > 0.9) {
           flaggedFor.add({
