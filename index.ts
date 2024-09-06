@@ -41,7 +41,7 @@ app.post("/", async (c) => {
     let { message } = body as { message: string };
 
     if (!message) {
-      return c.json({ error: "!Message argument is required!!" }, { status: 400 });
+      return c.json({ error: "Message argument is required!!!" }, { status: 400 });
     }
 
     if (message.length > 100) {
