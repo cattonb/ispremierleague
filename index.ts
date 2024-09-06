@@ -45,7 +45,7 @@ app.post("/", async (c) => {
     }
 
     if (message.length > 100) {
-      return c.json({ error: "Message can only be at most 100 characters!" }, { status: 413 });
+      return c.json({ error: "Message can only be at most 100 characters!!!" }, { status: 413 });
     }
 
     message = message
