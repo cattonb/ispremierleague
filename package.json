@@ -1,0 +1,24 @@
+{
+  "name": "ispremierleague-2024-2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "wrangler deploy --minify index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@upstash/vector": "^1.1.5",
+    "csv-parser": "^3.0.0",
+    "hono": "^4.5.11",
+    "langchain": "^0.2.18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "tsx": "^4.19.0",
+    "wrangler": "^3.75.0"
+  }
+}
